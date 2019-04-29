@@ -101,4 +101,3 @@ typings/
 # Serverless directories
 .serverless
 .idea
-build

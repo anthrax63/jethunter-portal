@@ -5,7 +5,10 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-app.use(proxy('/graphql', {target: 'https://jethunterdemo.herokuapp.com/graphql'}));
+app.use(proxy('/graphql', {
+  target: 'https://jethunterdemo.herokuapp.com/graphql', secure: false,
+  changeOrigin: true
+}));
 
 
 app.use(express.static(path.join(__dirname, 'build')));

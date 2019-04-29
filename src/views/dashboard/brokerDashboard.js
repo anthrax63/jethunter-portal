@@ -59,7 +59,7 @@ class BrokerDashboard extends Component {
                   Your JETMAN ID:
                 </div>
                 <div className="text-center">
-                  <a href="http://arturabadzhian.jetman.io">{`https://${brokerInfo.jetmanId}.jetman.io`}</a>
+                  <a href="https://artur.carrd.co/">{`https://${brokerInfo.jetmanId}.jetman.io`}</a>
                   <div className="pad2">
                     <br/>
                     <Button color="info" className="shadow-z-2 gradient-purple-bliss"

@@ -1,0 +1,44 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "mocha": true
+  },
+  "extends": [
+    "react-app",
+    "eslint:recommended",
+    "google"
+  ],
+  "rules": {
+    "max-len": [
+      "error",
+      {
+        "code": 160
+      }
+    ],
+    "semi": 2,
+    "indent": [
+      "error",
+      2
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "require-jsdoc": [
+      "off"
+    ],
+    "valid-jsdoc": [
+      "warn"
+    ],
+    "no-console": [
+      "off"
+    ],
+    "no-invalid-this": [
+      "off"
+    ],
+    "import/default": "off",
+    "import/named": "off"
+  }
+}

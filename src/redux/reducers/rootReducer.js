@@ -1,29 +1,21 @@
 // import external modules
 import {combineReducers} from 'redux';
 // import internal(own) modules
-import calenderReducer from './calenderReducer';
-import emailReducer from './email/';
-// import chatReducer from "./chatReducer";
-import chatReducer from './chat/';
-import contactsReducer from './contacts/';
-import todoReducer from './todo/';
-import customizer from './customizer/';
+import todoReducer from '../../apexLib/redux/reducers/todo/';
 import me from './graphql/me';
 import login from './graphql/login';
 import dashboard from './graphql/dashboard';
+import profile from './graphql/profile';
+
 import {reducer as toastrReducer} from 'react-redux-toastr';
 
 const rootReducer = combineReducers({
   me,
   login,
   dashboard,
-  calender: calenderReducer,
-  emailApp: emailReducer,
-  contactApp: contactsReducer,
+  profile,
   todoApp: todoReducer,
-  toastr: toastrReducer, // <- Mounted at toastr.
-  chatApp: chatReducer,
-  customizer: customizer
+  toastr: toastrReducer // <- Mounted at toastr.
 });
 
 export default rootReducer;

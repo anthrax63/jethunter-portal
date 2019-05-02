@@ -6,8 +6,8 @@ import TodoFilter from "../../components/todo/todoFilter";
 import TodoSearch from "../../components/todo/todoSearch";
 
 // import TodoList from "../../components/todo/contacsList";
-import TodoList from "../../containers/todo/visibleTodoList";
-import TodoDetails from "../../containers/todo/visibleTodoDetails";
+import TodoList from "../../apexLib/containers/todo/visibleTodoList";
+import TodoDetails from "../../apexLib/containers/todo/visibleTodoDetails";
 
 class Todo extends Component {
    render() {

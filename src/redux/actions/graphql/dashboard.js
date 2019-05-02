@@ -17,11 +17,9 @@ export function fetchCurrentUser() {
       login,
       firstName,
       lastName,
-      brokerInfo {
-        description,
-        company,
-        jetmanId
-      }
+      description,
+      company,
+      jetmanId
     }
   }`;
   return async (dispatch, getState, {graphqlRequest, history}) => {

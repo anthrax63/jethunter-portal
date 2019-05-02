@@ -2,8 +2,8 @@ import React from "react";
 import { Row, Col, Button, Modal, ModalHeader, ModalBody, ModalFooter,Form, FormGroup, Label, Input } from 'reactstrap';
 import { Mail, Inbox, Send,  File, Star, Trash, AlertCircle, Pocket, Tag } from "react-feather";
 import { Editor } from "react-draft-wysiwyg";
-import FilterEmail from '../../containers/email/filterEmails';
-import { VisibilityFilters } from '../../redux/actions/email/emailActions';
+import FilterEmail from '../../apexLib/containers/email/filterEmails';
+import { VisibilityFilters } from '../../apexLib/redux/actions/email/emailActions';
 import PerfectScrollbar from "react-perfect-scrollbar";
 
 import "../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";

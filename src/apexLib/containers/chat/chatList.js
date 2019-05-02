@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import chatList from '../../components/chat/chatList'
+import chatList from '../../../components/chat/chatList'
 import { openChat } from '../../redux/actions/chat/chatActions'
 
 const filterChats = (chats, chatSearch) => {

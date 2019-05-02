@@ -1,16 +1,17 @@
 import Profile from '../views/profile/profile';
 
 import {connect} from 'react-redux';
-import * as actionCreators from '../redux/actions/graphql/profile';
+import fetchCurrentUser from '../redux/actions/graphql/profile/fetchCurrentUser';
+import fillBrokerInfo from '../redux/actions/graphql/profile/fillBrokerInfo';
 import {bindActionCreators} from 'redux';
 
 
 const mapStateToProps = (state) => {
-  return state.dashboard;
+  return state.profile;
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(actionCreators, dispatch);
+  return bindActionCreators({fetchCurrentUser, fillBrokerInfo}, dispatch);
 };
 
 

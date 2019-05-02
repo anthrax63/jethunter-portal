@@ -1,6 +1,6 @@
 import React from "react";
 
-import VisibleTodoList from "../../containers/todo/visibleTodoList";
+import VisibleTodoList from "../../apexLib/containers/todo/visibleTodoList";
 
 const App = () => (
    <div>

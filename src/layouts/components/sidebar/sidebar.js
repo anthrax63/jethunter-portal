@@ -10,7 +10,7 @@ import SideMenuContent from './sidemenu/sidemenu';
 import SidebarHeader from './sidebarHeader/sidebarHeader';
 import {FoldedContentConsumer} from '../../../utility/context/toggleContentContext';
 import templateConfig from '../../../templateConfig';
-import {sidebarImage, sidebarImageUrl, sidebarBgColor, sidebarCollapsed, sidebarSize} from '../../../redux/actions/customizer/customizerActions';
+import {sidebarImage, sidebarImageUrl, sidebarBgColor, sidebarCollapsed, sidebarSize} from '../../../apexLib/redux/actions/customizer/customizerActions';
 
 class Sidebar extends Component {
    state = {
@@ -107,11 +107,11 @@ class Sidebar extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  color: state.customizer.sidebarBgColor,
-  img: state.customizer.sidebarImage,
-  imgurl: state.customizer.sidebarImageUrl,
-  size: state.customizer.sidebarSize,
-  collapsed: state.customizer.sidebarCollapsed
+  color: '',
+  img: '',
+  imgurl: '',
+  size: 'sidebar-md',
+  collapsed: false
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -7,7 +7,7 @@ import {
    todoVisiblityFilter,
    todoDetails
 } from "../../redux/actions/todo/todoActions";
-import todoList from "../../components/todo/todoList";
+import todoList from "../../../components/todo/todoList";
 
 const getVisibleTodo = (todo, filter, todoSearch) => {
    switch (filter) {

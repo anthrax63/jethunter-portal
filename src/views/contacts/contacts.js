@@ -5,8 +5,8 @@ import ContactsFilter from "../../components/contacts/contactsFilter";
 import ContactsSearch from "../../components/contacts/contactsSearch";
 
 // import ContactsList from "../../components/contacts/contacsList";
-import ContactsList from "../../containers/contacts/visibleContactsList";
-import ContactsDetails from "../../containers/contacts/visibleContactsDetails";
+import ContactsList from "../../apexLib/containers/contacts/visibleContactsList";
+import ContactsDetails from "../../apexLib/containers/contacts/visibleContactsDetails";
 
 class Contacts extends Component {
    render() {

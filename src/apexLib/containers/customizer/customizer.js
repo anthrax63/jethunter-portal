@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { sidebarImage, sidebarImageUrl, sidebarBgColor, sidebarCollapsed, sidebarSize } from '../../redux/actions/customizer/customizerActions'
 
 let Components = {
-    'Component1': require('../../components/customizer/customizer').default,
-    'Component2': require('../../layouts/components/sidebar/sidebar').default
+    'Component1': require('../../../components/customizer/customizer').default,
+    'Component2': require('../../../layouts/components/sidebar/sidebar').default
 };
 
 const mapStateToProps = state => ({
@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
     size: state.customizer.sidebarSize,
     collapsed: state.customizer.sidebarCollapsed
 })
-  
+
 const mapDispatchToProps = dispatch => ({
     sidebarBgColor: color => dispatch(sidebarBgColor(color)),
     sidebarImage: img => dispatch(sidebarImage(img)),
@@ -22,7 +22,7 @@ const mapDispatchToProps = dispatch => ({
     sidebarSize: size => dispatch(sidebarSize(size)),
     sidebarCollapsed: collapsed => dispatch(sidebarCollapsed(collapsed))
 })
-  
+
 export default connect(
     mapStateToProps,
     mapDispatchToProps

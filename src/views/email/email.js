@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from "react";
-import ShowEmials from "../../containers/email/showEmails";
+import ShowEmials from "../../apexLib/containers/email/showEmails";
 import EmailSidebar from "../../components/email/emailSidebar";
-import EmailActions from "../../containers/email/emailActions";
-import EmailSearch from "../../containers/email/emailSearch";
-import EmailContent from "../../containers/email/emailContent";
+import EmailActions from "../../apexLib/containers/email/emailActions";
+import EmailSearch from "../../apexLib/containers/email/emailSearch";
+import EmailContent from "../../apexLib/containers/email/emailContent";
 
 class Email extends Component {
    render() {

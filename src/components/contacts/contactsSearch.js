@@ -1,5 +1,5 @@
 import React from "react";
-import FilterSearch from "../../containers/contacts/contactsFilterSearch";
+import FilterSearch from "../../apexLib/containers/contacts/contactsFilterSearch";
 
 class ContactSearch extends React.Component {
    render() {

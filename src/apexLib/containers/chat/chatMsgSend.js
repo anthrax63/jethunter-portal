@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { sendMsg } from "../../redux/actions/chat/chatActions";
-import chatMsgForm from "../../components/chat/chatMsgForm";
+import chatMsgForm from "../../../components/chat/chatMsgForm";
 
 const mapStateToProps = state => ({
     id: state.chatApp.chatContent

@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from "react";
-import ChatList from "../../containers/chat/chatList";
-import ChatSearch from "../../containers/chat/chatSearch";
-import ChatContent from "../../containers/chat/chatContent";
-import ChatMsgSend from "../../containers/chat/chatMsgSend";
+import ChatList from "../../apexLib/containers/chat/chatList";
+import ChatSearch from "../../apexLib/containers/chat/chatSearch";
+import ChatContent from "../../apexLib/containers/chat/chatContent";
+import ChatMsgSend from "../../apexLib/containers/chat/chatMsgSend";
 import PerfectScrollbar from "react-perfect-scrollbar";
 
 class Chat extends Component {

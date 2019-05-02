@@ -1,6 +1,6 @@
 import React from "react";
 
-import VisibleContactList from "../../containers/contacts/visibleContactsList";
+import VisibleContactList from "../../apexLib/containers/contacts/visibleContactsList";
 
 const App = () => (
    <div>

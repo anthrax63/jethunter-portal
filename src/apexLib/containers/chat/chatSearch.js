@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { chatSearch } from "../../redux/actions/chat/chatActions";
-import Search from "../../components/chat/chatSearch";
+import Search from "../../../components/chat/chatSearch";
 
 const mapStateToProps = (state) => ({
    searchTerm: state.chatApp.chatSearch

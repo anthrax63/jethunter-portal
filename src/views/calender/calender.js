@@ -18,7 +18,7 @@ import { connect } from "react-redux";
 import DateTimePicker from "react-datetime";
 import "react-datetime/css/react-datetime.css";
 
-import { handleAddEvent } from "../../redux/actions/calenderAction/calenderAction";
+import { handleAddEvent } from "../../apexLib/redux/actions/calenderAction/calenderAction";
 
 ReactBigCalender.momentLocalizer(moment);
 const allViews = Object.keys(ReactBigCalender.Views).map(

@@ -1,8 +1,8 @@
 import React from "react";
 import { Modal, ModalHeader } from "reactstrap";
-import FilterLink from "../../containers/contacts/contactsFilterLink";
-import { contactVisiblityFilter } from "../../redux/actions/contacts";
-import AddContact from "../../containers/contacts/addContact";
+import FilterLink from "../../apexLib/containers/contacts/contactsFilterLink";
+import { contactVisiblityFilter } from "../../apexLib/redux/actions/contacts";
+import AddContact from "../../apexLib/containers/contacts/addContact";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import * as Icon from "react-feather";
 

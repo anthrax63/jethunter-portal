@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { todoSearch } from "../../redux/actions/todo/todoActions";
-import Search from "../../components/todo/Search";
+import Search from "../../../components/todo/Search";
 
 const mapStateToProps = (state) => ({
    value: state.todoApp.todoSearch

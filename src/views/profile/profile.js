@@ -4,6 +4,8 @@ import {Formik, Field, Form} from 'formik';
 import * as Yup from 'yup';
 
 import ContentHeader from '../../components/contentHead/contentHeader';
+import Loader from '../../components/loader';
+import makeCorrectInitialValues from '../helpers/makeCorrectInitialValues'
 
 const formSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -25,75 +27,74 @@ class Profile extends Component {
   }
 
   handleSubmit = async (values) => {
-    await this.props.fillBrokerInfo(values);
-    await this.props.fetchCurrentUser();
+    this.props.fillBrokerInfo(values);
   };
 
   render() {
-    const {firstName, lastName, brokerInfo = {}} = this.props;
+    const data = makeCorrectInitialValues(formSchema, this.props.data);
     return (
-      <Fragment>
-        <ContentHeader>Profile</ContentHeader>
-        <Row>
-          <Col sm="12">
-            <Card>
-              <CardBody>
-                <Formik
-                  initialValues={{
-                    firstName,
-                    lastName,
-                    ...brokerInfo
-                  }}
-                  validationSchema={formSchema}
-                  onSubmit={this.handleSubmit}
-                >
-                  {({errors, touched}) => (
-                    <Form>
-                      <FormGroup>
-                        <Label for="firstName">First Name</Label>
-                        <Field name="firstName" id="firstName"
-                               className={`form-control ${errors.firstName && touched.firstName && 'is-invalid'}`}/>
-                        {errors.firstName && touched.firstName ?
-                          <div className="invalid-feedback">{errors.firstName}</div> : null}
-                      </FormGroup>
-                      <FormGroup>
-                        <Label for="lastName">Last Name</Label>
-                        <Field name="lastName" id="lastName"
-                               className={`form-control ${errors.lastName && touched.lastName && 'is-invalid'}`}/>
-                        {errors.lastName && touched.lastName ?
-                          <div className="invalid-feedback">{errors.lastName}</div> : null}
-                      </FormGroup>
-                      <FormGroup>
-                        <Label for="description">Your description</Label>
-                        <Field name="description" id="description"
-                               className={`form-control ${errors.description && touched.description && 'is-invalid'}`}/>
-                        {errors.description && touched.description ?
-                          <div className="invalid-feedback">{errors.description}</div> : null}
-                      </FormGroup>
-                      <FormGroup>
-                        <Label for="company">Company</Label>
-                        <Field name="company" id="company"
-                               className={`form-control ${errors.company && touched.company && 'is-invalid'}`}/>
-                        {errors.company && touched.company ?
-                          <div className="invalid-feedback">{errors.company}</div> : null}
-                      </FormGroup>
+      <Loader {...this.props}>
+        <Fragment>
+          <ContentHeader>Profile</ContentHeader>
+          <Row>
+            <Col sm="12">
+              <Card>
+                <CardBody>
+                  <Formik
+                    initialValues={{
+                      ...data
+                    }}
+                    validationSchema={formSchema}
+                    onSubmit={this.handleSubmit}
+                  >
+                    {({errors, touched}) => (
+                      <Form>
+                        <FormGroup>
+                          <Label for="firstName">First Name</Label>
+                          <Field name="firstName" id="firstName"
+                                 className={`form-control ${errors.firstName && touched.firstName && 'is-invalid'}`}/>
+                          {errors.firstName && touched.firstName ?
+                            <div className="invalid-feedback">{errors.firstName}</div> : null}
+                        </FormGroup>
+                        <FormGroup>
+                          <Label for="lastName">Last Name</Label>
+                          <Field name="lastName" id="lastName"
+                                 className={`form-control ${errors.lastName && touched.lastName && 'is-invalid'}`}/>
+                          {errors.lastName && touched.lastName ?
+                            <div className="invalid-feedback">{errors.lastName}</div> : null}
+                        </FormGroup>
+                        <FormGroup>
+                          <Label for="description">Your description</Label>
+                          <Field name="description" id="description"
+                                 className={`form-control ${errors.description && touched.description && 'is-invalid'}`}/>
+                          {errors.description && touched.description ?
+                            <div className="invalid-feedback">{errors.description}</div> : null}
+                        </FormGroup>
+                        <FormGroup>
+                          <Label for="company">Company</Label>
+                          <Field name="company" id="company"
+                                 className={`form-control ${errors.company && touched.company && 'is-invalid'}`}/>
+                          {errors.company && touched.company ?
+                            <div className="invalid-feedback">{errors.company}</div> : null}
+                        </FormGroup>
 
-                      <FormGroup>
-                        <Label for="jetmanId">Jetman ID</Label>
-                        <Field name="jetmanId" id="jetmanId"
-                               className={`form-control ${errors.jetmanId && touched.jetmanId && 'is-invalid'}`}/>
-                        {errors.jetmanId && touched.jetmanId ?
-                          <div className="invalid-feedback">{errors.jetmanId}</div> : null}
-                      </FormGroup>
-                      <Button type="submit">Save</Button>
-                    </Form>
-                  )}
-                </Formik>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
-      </Fragment>
+                        <FormGroup>
+                          <Label for="jetmanId">Jetman ID</Label>
+                          <Field name="jetmanId" id="jetmanId"
+                                 className={`form-control ${errors.jetmanId && touched.jetmanId && 'is-invalid'}`}/>
+                          {errors.jetmanId && touched.jetmanId ?
+                            <div className="invalid-feedback">{errors.jetmanId}</div> : null}
+                        </FormGroup>
+                        <Button type="submit">Save</Button>
+                      </Form>
+                    )}
+                  </Formik>
+                </CardBody>
+              </Card>
+            </Col>
+          </Row>
+        </Fragment>
+      </Loader>
     );
   }
 }

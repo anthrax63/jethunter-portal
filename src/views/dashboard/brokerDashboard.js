@@ -44,7 +44,7 @@ class BrokerDashboard extends Component {
   };
 
   renderFilled = () => {
-    const {firstName, lastName, brokerInfo = {}} = this.props;
+    const {firstName, lastName, jetmanId, company, description} = this.props;
     return (
       <Fragment>
         <Row>
@@ -59,7 +59,7 @@ class BrokerDashboard extends Component {
                   Your JETMAN ID:
                 </div>
                 <div className="text-center">
-                  <a href="https://artur.carrd.co/">{`https://${brokerInfo.jetmanId}.jetman.io`}</a>
+                  <a href="https://artur.carrd.co/">{`https://${jetmanId}.jetman.io`}</a>
                   <div className="pad2">
                     <br/>
                     <Button color="info" className="shadow-z-2 gradient-purple-bliss"
@@ -79,7 +79,7 @@ class BrokerDashboard extends Component {
               <CardBody>
                 <BrokerCard
                   fullName={`${firstName} ${lastName}`}
-                  company={brokerInfo.company}
+                  company={company}
                 />
               </CardBody>
             </Card>
@@ -148,8 +148,8 @@ class BrokerDashboard extends Component {
   };
 
   render() {
-    const {brokerInfo} = this.props;
-    return brokerInfo ? this.renderFilled() : this.renderNotFilled();
+    const {jetmanId} = this.props;
+    return jetmanId ? this.renderFilled() : this.renderNotFilled();
   }
 }
 

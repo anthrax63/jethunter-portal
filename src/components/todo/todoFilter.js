@@ -1,8 +1,8 @@
 import React from "react";
 import { Modal, ModalHeader } from "reactstrap";
-import FilterLink from "../../containers/todo/todoFilterLink";
-import { todoVisiblityFilter } from "../../redux/actions/todo/todoActions";
-import AddTodo from "../../containers/todo/addTodo";
+import FilterLink from "../../apexLib/containers/todo/todoFilterLink";
+import { todoVisiblityFilter } from "../../apexLib/redux/actions/todo/todoActions";
+import AddTodo from "../../apexLib/containers/todo/addTodo";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import * as Icon from "react-feather";
 

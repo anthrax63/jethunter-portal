@@ -21,6 +21,33 @@ function createGraphqlRequest(fetchKnowingCookie) {
   };
 }
 
+function createMultipartGraphqlRequest(fetchKnowingCookie) {
+  /*
+   * dataMap: {file1: File, file2: File}
+   */
+  return async function graphqlRequest(query, variables, dataMap) {
+    const form = new FormData();
+    form.append('operations', JSON.stringify({query, variables}));
+    const dataVars = Object.keys(dataMap);
+    const map = {};
+    for (let i = 0; i < dataVars.length; i++) {
+      map[i] = [`variables.${dataVars[i]}`];
+    }
+    form.append('map', JSON.stringify(map));
+    for (let i = 0; i < dataVars.length; i++) {
+      form.append(String(i), dataMap[dataVars[i]]);
+    }
+    const fetchConfig = {
+      method: 'post',
+      body: form,
+      credentials: 'include'
+    };
+    const resp = await fetchKnowingCookie(config.graphQlEndpoint, fetchConfig);
+    if (resp.status !== 200) throw new Error(resp.statusText);
+    return await resp.json();
+  };
+}
+
 function createFileUploadRequest(fetchKnowingCookie) {
   return async function fileUploadRequest(id, file) {
     check.assert.nonEmptyString(id, '"id" is required');
@@ -65,11 +92,14 @@ function createFetchKnowingCookie({cookie} = {}) {
 export default function createHelpers() {
   const fetchKnowingCookie = createFetchKnowingCookie();
   const graphqlRequest = createGraphqlRequest(fetchKnowingCookie);
+  const multipartGraphqlRequest = createMultipartGraphqlRequest(fetchKnowingCookie);
   const fileUploadRequest = createFileUploadRequest(fetchKnowingCookie);
+
 
   return {
     fetch: fetchKnowingCookie,
     graphqlRequest,
+    multipartGraphqlRequest,
     fileUploadRequest,
     history
   };

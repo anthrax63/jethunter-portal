@@ -22,8 +22,8 @@ class BrokerCard extends PureComponent {
             <Col sm="3" className="text-center">
               <div>
                 <img
-                  src={require('../../assets/img/avatar_mock.png')}
-                  className="bg-danger width-100 rounded-circle img-fluid mb-4"
+                  src={this.props.photo}
+                  className="bg-danger width-100 height-100 rounded-circle img-fluid mb-4"
                   alt="Card cap 02"
                 />
               </div>

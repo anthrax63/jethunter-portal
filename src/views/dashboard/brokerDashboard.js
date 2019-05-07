@@ -28,7 +28,7 @@ class BrokerDashboard extends Component {
   handleCopyClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    copy(this.props.brokerInfo.jetmanId);
+    copy(this.props.jetmanId);
     toastr.success('Copied to clipboard!');
   };
 
@@ -44,7 +44,7 @@ class BrokerDashboard extends Component {
   };
 
   renderFilled = () => {
-    const {firstName, lastName, jetmanId, company, description} = this.props;
+    const {firstName, lastName, jetmanId, company, photo: {link}} = this.props;
     return (
       <Fragment>
         <Row>
@@ -62,11 +62,15 @@ class BrokerDashboard extends Component {
                   <a href="https://artur.carrd.co/">{`https://${jetmanId}.jetman.io`}</a>
                   <div className="pad2">
                     <br/>
-                    <Button color="info" className="shadow-z-2 gradient-purple-bliss"
-                            size="sm" onClick={this.handleCopyClick}>Copy</Button>
+                    <Button
+                      color="info"
+                      className="shadow-z-2 gradient-purple-bliss"
+                      size="sm"
+                      onClick={this.handleCopyClick}>Copy</Button>
                     <span>&nbsp;</span>
-                    <Button color="info" className="shadow-z-2 gradient-pomegranate"
-                            size="sm" onClick={this.handleCopyClick}>Share</Button>
+                    <Button
+                      color="info" className="shadow-z-2 gradient-pomegranate"
+                      size="sm" onClick={this.handleCopyClick}>Share</Button>
                   </div>
                 </div>
               </CardBody>
@@ -78,6 +82,7 @@ class BrokerDashboard extends Component {
             <Card>
               <CardBody>
                 <BrokerCard
+                  photo={link}
                   fullName={`${firstName} ${lastName}`}
                   company={company}
                 />

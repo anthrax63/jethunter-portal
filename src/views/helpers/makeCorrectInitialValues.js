@@ -8,6 +8,9 @@ export default function (yupSchema, data) {
     if (field._type === 'string' && !newData[f]) {
       newData[f] = '';
     }
+    if (field._type === 'object' && !newData[f]) {
+      newData[f] = null;
+    }
   });
   return newData;
 }

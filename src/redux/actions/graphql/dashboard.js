@@ -19,7 +19,11 @@ export function fetchCurrentUser() {
       lastName,
       description,
       company,
-      jetmanId
+      jetmanId,
+      photo {
+        id,
+        link
+      }
     }
   }`;
   return async (dispatch, getState, {graphqlRequest, history}) => {

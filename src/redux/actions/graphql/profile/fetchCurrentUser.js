@@ -11,7 +11,11 @@ export default function fetchCurrentUser(variables) {
       lastName,
       description,
       company,
-      jetmanId
+      jetmanId,
+      photo {
+        id,
+        link
+      }
     }
   }`;
   return async (dispatch, getState, {graphqlRequest, history}) => {

@@ -6,10 +6,12 @@ import me from './graphql/me';
 import login from './graphql/login';
 import dashboard from './graphql/dashboard';
 import profile from './graphql/profile';
+import intl from './intl';
 
 import {reducer as toastrReducer} from 'react-redux-toastr';
 
 const rootReducer = combineReducers({
+  intl,
   me,
   login,
   dashboard,

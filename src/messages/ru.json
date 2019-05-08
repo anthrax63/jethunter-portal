@@ -1,0 +1,236 @@
+[
+  {
+    "id": "common.button.save",
+    "description": "Save button",
+    "defaultMessage": "Save",
+    "message": "Сохранить",
+    "files": [
+      "src/i10n/commonMessages.js"
+    ]
+  },
+  {
+    "id": "errors.accessViolationError",
+    "description": "Access violation error",
+    "defaultMessage": "Access violation",
+    "message": "Ошибка доступа",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "errors.authorizationError",
+    "description": "Authorization error",
+    "defaultMessage": "Authorization error",
+    "message": "Ошибка авторизации",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "errors.internalServerError",
+    "description": "Internal server error",
+    "defaultMessage": "Internal server error",
+    "message": "Внутренняя ошибка сервера",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "errors.invalidLoginOrPasswordError",
+    "description": "Invalid login or password",
+    "defaultMessage": "Invalid login or password",
+    "message": "Неправильный логин или пароль",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "errors.notEnoughBalance",
+    "description": "Not enough balance",
+    "defaultMessage": "Not enough balance",
+    "message": "",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "errors.notFoundError",
+    "description": "Not found error",
+    "defaultMessage": "Requested item not found",
+    "message": "Элемент не найден",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "errors.unknownError",
+    "description": "An unknown error has occurred",
+    "defaultMessage": "An unknown error has occurred",
+    "message": "Неизвестная ошибка",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "errors.userAlreadyExists",
+    "description": "User already exists",
+    "defaultMessage": "User already exists",
+    "message": "Пользователь уже существует",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "errors.validationError",
+    "description": "Validation error",
+    "defaultMessage": "Validation error",
+    "message": "Ошибка валидации",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "profile.firstName",
+    "defaultMessage": "First Name",
+    "message": "Имя",
+    "files": [
+      "src/views/profile/profile.js"
+    ]
+  },
+  {
+    "id": "profile.company",
+    "defaultMessage": "Company",
+    "message": "Организация",
+    "files": [
+      "src/views/profile/profile.js"
+    ]
+  },
+  {
+    "id": "profile.description",
+    "defaultMessage": "Description",
+    "message": "Описание",
+    "files": [
+      "src/views/profile/profile.js"
+    ]
+  },
+  {
+    "id": "profile.jetmanId",
+    "defaultMessage": "JetmanID",
+    "message": "JetmanID",
+    "files": [
+      "src/views/profile/profile.js"
+    ]
+  },
+  {
+    "id": "profile.lastName",
+    "defaultMessage": "Last Name",
+    "message": "Фамилия",
+    "files": [
+      "src/views/profile/profile.js"
+    ]
+  },
+  {
+    "id": "profile.photo",
+    "defaultMessage": "Photo",
+    "message": "Фотография",
+    "files": [
+      "src/views/profile/profile.js"
+    ]
+  },
+  {
+    "id": "profile.title",
+    "defaultMessage": "Profile",
+    "message": "Профиль",
+    "files": [
+      "src/views/profile/profile.js"
+    ]
+  },
+  {
+    "id": "sideMenu.dashboard",
+    "defaultMessage": "Dashboard",
+    "message": "Главная",
+    "files": [
+      "src/layouts/components/sidebar/sidemenu/sidemenu.js"
+    ]
+  },
+  {
+    "id": "sideMenu.profile",
+    "defaultMessage": "Profile",
+    "message": "Профиль",
+    "files": [
+      "src/layouts/components/sidebar/sidemenu/sidemenu.js"
+    ]
+  },
+  {
+    "id": "brokerDashboard.congratulations",
+    "defaultMessage": "Congratulations {firstName}!",
+    "message": "Поздравляем {firstName}!",
+    "files": [
+      "src/views/dashboard/brokerDashboard.js"
+    ]
+  },
+  {
+    "id": "brokerDashboard.youHaveCompleted",
+    "defaultMessage": "You have completed the creation of Jetman Profile! The Jetman ID was assigned.",
+    "message": "Вы завершили создание профиля Jetman! Вам был назначен JetmanID.",
+    "files": [
+      "src/views/dashboard/brokerDashboard.js"
+    ]
+  },
+  {
+    "id": "brokerDashboard.yourId",
+    "defaultMessage": "Your JETMAN ID",
+    "message": "Ваш Jetman ID",
+    "files": [
+      "src/views/dashboard/brokerDashboard.js"
+    ]
+  },
+  {
+    "id": "common.button.copy",
+    "defaultMessage": "Copy",
+    "message": "Копировать",
+    "files": [
+      "src/i10n/commonMessages.js"
+    ]
+  },
+  {
+    "id": "common.button.share",
+    "defaultMessage": "Share",
+    "message": "Поделиться",
+    "files": [
+      "src/i10n/commonMessages.js"
+    ]
+  },
+  {
+    "id": "brokerCard.editProfile",
+    "defaultMessage": "Edit profile",
+    "message": "Изменить",
+    "files": [
+      "src/components/cards/brokerCard.js"
+    ]
+  },
+  {
+    "id": "brokerDashboard.copied",
+    "defaultMessage": "Copied to clipboard!",
+    "message": "Скопировано в буфер обмена!",
+    "files": [
+      "src/views/dashboard/brokerDashboard.js"
+    ]
+  },
+  {
+    "id": "brokerCard.brokerAt",
+    "defaultMessage": "Broker at",
+    "message": "Брокер в",
+    "files": [
+      "src/components/cards/brokerCard.js"
+    ]
+  },
+  {
+    "id": "common.messages.saved",
+    "defaultMessage": "Successfully saved!",
+    "message": "Успешно сохранено!",
+    "files": [
+      "src/i10n/commonMessages.js"
+    ]
+  }
+]

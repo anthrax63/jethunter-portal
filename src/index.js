@@ -12,13 +12,15 @@ import 'font-awesome/css/font-awesome.min.css';
 
 import './index.scss';
 import Spinner from './components/spinner/spinner';
+import {IntlProvider} from 'react-intl';
+
 
 const LazyApp = lazy(() => import('./containers/app'));
 
 ReactDOM.render(
   <Provider store={store}>
-    <Suspense fallback={<Spinner />}>
-      <LazyApp />
+    <Suspense fallback={<Spinner/>}>
+      <LazyApp/>
       <ReduxToastr
         timeOut={4000}
         newestOnTop={false}

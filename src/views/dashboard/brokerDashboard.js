@@ -19,6 +19,27 @@ import {AdvancedCardData} from '../cards/advancedCardData';
 import {Link} from 'react-router-dom';
 import {toastr} from 'react-redux-toastr';
 import copy from 'copy-to-clipboard';
+import {defineMessages, FormattedMessage, injectIntl} from 'react-intl';
+import commonMessages from '../../i10n/commonMessages';
+
+const messages = defineMessages({
+  congratulations: {
+    id: 'brokerDashboard.congratulations',
+    defaultMessage: 'Congratulations {firstName}!'
+  },
+  youHaveCompleted: {
+    id: 'brokerDashboard.youHaveCompleted',
+    defaultMessage: 'You have completed the creation of Jetman Profile! The Jetman ID was assigned.'
+  },
+  yourId: {
+    id: 'brokerDashboard.yourId',
+    defaultMessage: 'Your JETMAN ID'
+  },
+  copied: {
+    id: 'brokerDashboard.copied',
+    defaultMessage: 'Copied to clipboard!'
+  }
+});
 
 class BrokerDashboard extends Component {
   async componentDidMount() {
@@ -29,7 +50,7 @@ class BrokerDashboard extends Component {
     e.preventDefault();
     e.stopPropagation();
     copy(this.props.jetmanId);
-    toastr.success('Copied to clipboard!');
+    toastr.success(this.props.intl.formatMessage(messages.copied));
   };
 
   renderNotFilled = () => {
@@ -44,19 +65,19 @@ class BrokerDashboard extends Component {
   };
 
   renderFilled = () => {
-    const {firstName, lastName, jetmanId, company, photo: {link}} = this.props;
+    const {firstName, lastName, jetmanId, company, description, photo: {link}} = this.props;
     return (
       <Fragment>
         <Row>
           <Col sm="12" md="12">
             <Card>
               <CardBody className="text-center">
-                <CardTitle>Congratulations {firstName}!</CardTitle>
+                <CardTitle><FormattedMessage {...messages.congratulations} values={{firstName}} /></CardTitle>
                 <CardText>
-                  You have completed the creation of Jetman Profile! The Jetman ID was assigned.
+                  <FormattedMessage {...messages.youHaveCompleted} />
                 </CardText>
                 <div>
-                  Your JETMAN ID:
+                  <FormattedMessage {...messages.yourId} />
                 </div>
                 <div className="text-center">
                   <a href="https://artur.carrd.co/">{`https://${jetmanId}.jetman.io`}</a>
@@ -66,11 +87,11 @@ class BrokerDashboard extends Component {
                       color="info"
                       className="shadow-z-2 gradient-purple-bliss"
                       size="sm"
-                      onClick={this.handleCopyClick}>Copy</Button>
+                      onClick={this.handleCopyClick}><FormattedMessage {...commonMessages.copy} /></Button>
                     <span>&nbsp;</span>
                     <Button
                       color="info" className="shadow-z-2 gradient-pomegranate"
-                      size="sm" onClick={this.handleCopyClick}>Share</Button>
+                      size="sm" onClick={this.handleCopyClick}><FormattedMessage {...commonMessages.share} /></Button>
                   </div>
                 </div>
               </CardBody>
@@ -85,6 +106,7 @@ class BrokerDashboard extends Component {
                   photo={link}
                   fullName={`${firstName} ${lastName}`}
                   company={company}
+                  description={description}
                 />
               </CardBody>
             </Card>
@@ -158,4 +180,4 @@ class BrokerDashboard extends Component {
   }
 }
 
-export default BrokerDashboard;
+export default injectIntl(BrokerDashboard);

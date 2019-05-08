@@ -1,0 +1,236 @@
+[
+  {
+    "id": "common.button.save",
+    "description": "Save button",
+    "defaultMessage": "Save",
+    "message": "",
+    "files": [
+      "src/i10n/commonMessages.js"
+    ]
+  },
+  {
+    "id": "errors.accessViolationError",
+    "description": "Access violation error",
+    "defaultMessage": "Access violation",
+    "message": "",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "errors.authorizationError",
+    "description": "Authorization error",
+    "defaultMessage": "Authorization error",
+    "message": "",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "errors.internalServerError",
+    "description": "Internal server error",
+    "defaultMessage": "Internal server error",
+    "message": "",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "errors.invalidLoginOrPasswordError",
+    "description": "Invalid login or password",
+    "defaultMessage": "Invalid login or password",
+    "message": "",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "errors.notEnoughBalance",
+    "description": "Not enough balance",
+    "defaultMessage": "Not enough balance",
+    "message": "",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "errors.notFoundError",
+    "description": "Not found error",
+    "defaultMessage": "Requested item not found",
+    "message": "",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "errors.unknownError",
+    "description": "An unknown error has occurred",
+    "defaultMessage": "An unknown error has occurred",
+    "message": "",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "errors.userAlreadyExists",
+    "description": "User already exists",
+    "defaultMessage": "User already exists",
+    "message": "",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "errors.validationError",
+    "description": "Validation error",
+    "defaultMessage": "Validation error",
+    "message": "",
+    "files": [
+      "src/redux/actions/graphql/constants/errors.js"
+    ]
+  },
+  {
+    "id": "profile.firstName",
+    "defaultMessage": "First Name",
+    "message": "",
+    "files": [
+      "src/views/profile/profile.js"
+    ]
+  },
+  {
+    "id": "profile.company",
+    "defaultMessage": "Company",
+    "message": "",
+    "files": [
+      "src/views/profile/profile.js"
+    ]
+  },
+  {
+    "id": "profile.description",
+    "defaultMessage": "Description",
+    "message": "",
+    "files": [
+      "src/views/profile/profile.js"
+    ]
+  },
+  {
+    "id": "profile.jetmanId",
+    "defaultMessage": "JetmanID",
+    "message": "",
+    "files": [
+      "src/views/profile/profile.js"
+    ]
+  },
+  {
+    "id": "profile.lastName",
+    "defaultMessage": "Last Name",
+    "message": "",
+    "files": [
+      "src/views/profile/profile.js"
+    ]
+  },
+  {
+    "id": "profile.photo",
+    "defaultMessage": "Photo",
+    "message": "",
+    "files": [
+      "src/views/profile/profile.js"
+    ]
+  },
+  {
+    "id": "profile.title",
+    "defaultMessage": "Profile",
+    "message": "",
+    "files": [
+      "src/views/profile/profile.js"
+    ]
+  },
+  {
+    "id": "sideMenu.dashboard",
+    "defaultMessage": "Dashboard",
+    "message": "",
+    "files": [
+      "src/layouts/components/sidebar/sidemenu/sidemenu.js"
+    ]
+  },
+  {
+    "id": "sideMenu.profile",
+    "defaultMessage": "Profile",
+    "message": "",
+    "files": [
+      "src/layouts/components/sidebar/sidemenu/sidemenu.js"
+    ]
+  },
+  {
+    "id": "brokerDashboard.congratulations",
+    "defaultMessage": "Congratulations {firstName}!",
+    "message": "",
+    "files": [
+      "src/views/dashboard/brokerDashboard.js"
+    ]
+  },
+  {
+    "id": "brokerDashboard.youHaveCompleted",
+    "defaultMessage": "You have completed the creation of Jetman Profile! The Jetman ID was assigned.",
+    "message": "",
+    "files": [
+      "src/views/dashboard/brokerDashboard.js"
+    ]
+  },
+  {
+    "id": "brokerDashboard.yourId",
+    "defaultMessage": "Your JETMAN ID",
+    "message": "",
+    "files": [
+      "src/views/dashboard/brokerDashboard.js"
+    ]
+  },
+  {
+    "id": "common.button.copy",
+    "defaultMessage": "Copy",
+    "message": "",
+    "files": [
+      "src/i10n/commonMessages.js"
+    ]
+  },
+  {
+    "id": "common.button.share",
+    "defaultMessage": "Share",
+    "message": "",
+    "files": [
+      "src/i10n/commonMessages.js"
+    ]
+  },
+  {
+    "id": "brokerCard.editProfile",
+    "defaultMessage": "Edit profile",
+    "message": "",
+    "files": [
+      "src/components/cards/brokerCard.js"
+    ]
+  },
+  {
+    "id": "brokerDashboard.copied",
+    "defaultMessage": "Copied to clipboard!",
+    "message": "",
+    "files": [
+      "src/views/dashboard/brokerDashboard.js"
+    ]
+  },
+  {
+    "id": "brokerCard.brokerAt",
+    "defaultMessage": "Broker at",
+    "message": "",
+    "files": [
+      "src/components/cards/brokerCard.js"
+    ]
+  },
+  {
+    "id": "common.messages.saved",
+    "defaultMessage": "Successfully saved!",
+    "message": "",
+    "files": [
+      "src/i10n/commonMessages.js"
+    ]
+  }
+]

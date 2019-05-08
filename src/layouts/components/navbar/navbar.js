@@ -6,6 +6,7 @@ import {
   Navbar,
   Nav,
   UncontrolledDropdown,
+  Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem
@@ -17,30 +18,42 @@ import {
   User,
   LogOut
 } from 'react-feather';
-
+import {injectIntl} from 'react-intl';
 
 import userImage from '../../../assets/img/avatar_mock.png';
+import ReactCountryFlag from 'react-country-flag';
+
+const iconsMap = {
+  en: 'us',
+  ru: 'ru'
+};
 
 class ThemeNavbar extends Component {
-   handleClick = (e) => {
-     this.props.toggleSidebarMenu('open');
-   };
-   constructor(props) {
-     super(props);
+  handleClick = (e) => {
+    this.props.toggleSidebarMenu('open');
+  };
 
-     this.toggle = this.toggle.bind(this);
-     this.state = {
-       isOpen: false
-     };
-   }
-   toggle() {
-     this.setState({
-       isOpen: !this.state.isOpen
-     });
-   }
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
 
   handleLogout = () => {
     this.props.logout();
+  };
+
+  handleLocaleSwitch = (locale) => {
+    this.props.setLocale(locale);
   };
 
   render() {
@@ -67,22 +80,35 @@ class ThemeNavbar extends Component {
               <Nav className="ml-auto float-right" navbar>
                 <UncontrolledDropdown nav inNavbar className="pr-1">
                   <DropdownToggle nav>
-                    <img src={userImage} alt="logged-in-user" className="rounded-circle width-35" />
+                    <ReactCountryFlag code={iconsMap[this.props.intl.locale]} svg/> {this.props.intl.locale.toUpperCase()}
+                  </DropdownToggle>
+                  <DropdownMenu right>
+                    <DropdownItem onClick={this.handleLocaleSwitch.bind(this, 'en')}>
+                      <ReactCountryFlag code={iconsMap['en']} svg/> English
+                    </DropdownItem>
+                    <DropdownItem onClick={this.handleLocaleSwitch.bind(this, 'ru')}>
+                      <ReactCountryFlag code={iconsMap['ru']} svg/> Русский
+                    </DropdownItem>
+                  </DropdownMenu>
+                </UncontrolledDropdown>
+                <UncontrolledDropdown nav inNavbar className="pr-1">
+                  <DropdownToggle nav>
+                    <img src={userImage} alt="logged-in-user" className="rounded-circle width-35"/>
                   </DropdownToggle>
                   <DropdownMenu right>
                     <DropdownItem>
                       <span className="font-small-3">{`${this.props.firstName} ${this.props.lastName}`}</span>
                     </DropdownItem>
-                    <DropdownItem divider />
+                    <DropdownItem divider/>
 
                     <Link to="/profile" className="p-0">
                       <DropdownItem>
-                        <User size={16} className="mr-1" /> My Profile
+                        <User size={16} className="mr-1"/> My Profile
                       </DropdownItem>
                     </Link>
                     <Link to="/signin" className="p-0">
                       <DropdownItem onClick={this.handleLogout}>
-                        <LogOut size={16} className="mr-1" /> Logout
+                        <LogOut size={16} className="mr-1"/> Logout
                       </DropdownItem>
                     </Link>
                   </DropdownMenu>
@@ -96,4 +122,4 @@ class ThemeNavbar extends Component {
   }
 }
 
-export default ThemeNavbar;
+export default injectIntl(ThemeNavbar);

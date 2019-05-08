@@ -4,12 +4,23 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
 
-
 // Chsrtis JS
 // Chsrtis CSS
 import 'chartist/dist/chartist.min.css';
 // Component specific chart CSS
 import '../../assets/scss/components/cards/userStatisticChartCard.scss';
+import {defineMessages, FormattedMessage} from 'react-intl';
+
+const messages = defineMessages({
+  editProfile: {
+    id: 'brokerCard.editProfile',
+    defaultMessage: 'Edit profile'
+  },
+  brokerAt: {
+    id: 'brokerCard.brokerAt',
+    defaultMessage: 'Broker at'
+  }
+});
 
 class BrokerCard extends PureComponent {
 
@@ -29,7 +40,7 @@ class BrokerCard extends PureComponent {
               </div>
               <div>
                 <Button tag={Link} to="/profile" color="info" className="shadow-z-2 gradient-nepal"
-                  size="sm">Edit profile</Button>
+                  size="sm"><FormattedMessage {...messages.editProfile} /></Button>
               </div>
             </Col>
             <Col sm="9">
@@ -42,12 +53,12 @@ class BrokerCard extends PureComponent {
               </Row>
               <Row>
                 <Col>
-                  <h5>Broker at <a href="#">{this.props.company}</a></h5>
+                  <h5><FormattedMessage {...messages.brokerAt} /> <a href="#">{this.props.company}</a></h5>
                 </Col>
               </Row>
               <Row>
                 <Col>
-                  <span>We help to alleviate the expense and burden of recruiting and subsequent administrative support functions through our crew leasing and recruiting services. </span>
+                  <span>{this.props.description}</span>
                 </Col>
               </Row>
             </Col>

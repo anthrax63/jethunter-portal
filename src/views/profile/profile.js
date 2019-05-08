@@ -7,6 +7,41 @@ import ContentHeader from '../../components/contentHead/contentHeader';
 import Loader from '../../components/loader';
 import makeCorrectInitialValues from '../helpers/makeCorrectInitialValues';
 import ProfilePhotoUploader from '../../components/photoUpload/profilePhotoUploader';
+import commonMessages from '../../i10n/commonMessages';
+import {defineMessages, FormattedMessage, injectIntl} from 'react-intl';
+import {toastr} from 'react-redux-toastr';
+
+
+const messages = defineMessages({
+  title: {
+    id: 'profile.title',
+    defaultMessage: 'Profile'
+  },
+  firstName: {
+    id: 'profile.firstName',
+    defaultMessage: 'First Name'
+  },
+  lastName: {
+    id: 'profile.lastName',
+    defaultMessage: 'Last Name'
+  },
+  description: {
+    id: 'profile.description',
+    defaultMessage: 'Description'
+  },
+  company: {
+    id: 'profile.company',
+    defaultMessage: 'Company'
+  },
+  jetmanId: {
+    id: 'profile.jetmanId',
+    defaultMessage: 'JetmanID'
+  },
+  photo: {
+    id: 'profile.photo',
+    defaultMessage: 'Photo'
+  }
+});
 
 const formSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -31,7 +66,10 @@ class Profile extends Component {
   }
 
   handleSubmit = async (values) => {
-    this.props.fillBrokerInfo(values);
+    const res = await this.props.fillBrokerInfo(values);
+    if (res) {
+      toastr.success(this.props.intl.formatMessage(commonMessages.saved));
+    }
   };
 
   handlePhotoUploaded = (form, file) => {
@@ -44,7 +82,7 @@ class Profile extends Component {
     return (
       <Loader {...this.props}>
         <Fragment>
-          <ContentHeader>Profile</ContentHeader>
+          <ContentHeader><FormattedMessage {...messages.title} /></ContentHeader>
           <Row>
             <Col sm="12">
               <Card>
@@ -59,7 +97,7 @@ class Profile extends Component {
                     {({values, errors, touched}) => (
                       <Form>
                         <FormGroup>
-                          <Label for="firstName">First Name</Label>
+                          <Label for="firstName"><FormattedMessage {...messages.firstName} /></Label>
                           <Field
                             name="firstName" id="firstName"
                             className={`form-control ${errors.firstName && touched.firstName && 'is-invalid'}`}/>
@@ -67,7 +105,7 @@ class Profile extends Component {
                             <div className="invalid-feedback">{errors.firstName}</div> : null}
                         </FormGroup>
                         <FormGroup>
-                          <Label for="lastName">Last Name</Label>
+                          <Label for="lastName"><FormattedMessage {...messages.lastName} /></Label>
                           <Field
                             name="lastName" id="lastName"
                             className={`form-control ${errors.lastName && touched.lastName && 'is-invalid'}`}/>
@@ -75,7 +113,7 @@ class Profile extends Component {
                             <div className="invalid-feedback">{errors.lastName}</div> : null}
                         </FormGroup>
                         <FormGroup>
-                          <Label for="description">Your description</Label>
+                          <Label for="description"><FormattedMessage {...messages.description} /></Label>
                           <Field
                             name="description" id="description"
                             className={`form-control ${errors.description && touched.description && 'is-invalid'}`}/>
@@ -83,7 +121,7 @@ class Profile extends Component {
                             <div className="invalid-feedback">{errors.description}</div> : null}
                         </FormGroup>
                         <FormGroup>
-                          <Label for="company">Company</Label>
+                          <Label for="company"><FormattedMessage {...messages.company} /></Label>
                           <Field
                             name="company" id="company"
                             className={`form-control ${errors.company && touched.company && 'is-invalid'}`}/>
@@ -92,7 +130,7 @@ class Profile extends Component {
                         </FormGroup>
 
                         <FormGroup>
-                          <Label for="jetmanId">Jetman ID</Label>
+                          <Label for="jetmanId"><FormattedMessage {...messages.jetmanId} /></Label>
                           <Field
                             name="jetmanId" id="jetmanId"
                             className={`form-control ${errors.jetmanId && touched.jetmanId && 'is-invalid'}`}/>
@@ -100,7 +138,7 @@ class Profile extends Component {
                             <div className="invalid-feedback">{errors.jetmanId}</div> : null}
                         </FormGroup>
                         <FormGroup>
-                          <Label for="photo">Photo</Label>
+                          <Label for="photo"><FormattedMessage {...messages.photo} /></Label>
                           <Field
                             name="photo"
                             id="photo"
@@ -120,7 +158,7 @@ class Profile extends Component {
                           {errors.photo ?
                             <div style={{color: 'red'}}>{errors.photo}</div> : null}
                         </FormGroup>
-                        <Button type="submit">Save</Button>
+                        <Button type="submit"><FormattedMessage {...commonMessages.save} /></Button>
                       </Form>
                     )}
                   </Formik>
@@ -134,4 +172,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+export default injectIntl(Profile);

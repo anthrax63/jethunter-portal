@@ -5,7 +5,7 @@ const initState = {
   isLoggedIn: false
 };
 
-const chatReducer = (state = initState, action) => {
+const meReducer = (state = initState, action) => {
   switch (action.type) {
   case actions.success:
     return {
@@ -17,4 +17,4 @@ const chatReducer = (state = initState, action) => {
   }
 };
 
-export default chatReducer;
+export default meReducer;

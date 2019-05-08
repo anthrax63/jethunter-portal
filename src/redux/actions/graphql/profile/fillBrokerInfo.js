@@ -1,6 +1,5 @@
 import dispatchGraphQlRequest from '../helpers/dispatchGraphQlRequest';
 import createFetchActions from '../helpers/createFetchActions';
-import {toastr} from 'react-redux-toastr';
 
 
 export const actions = createFetchActions('PROFILE_FILL_BROKER_INFO');
@@ -17,9 +16,6 @@ export default function fillBrokerInfo(variables) {
     if (vars.photo && vars.photo.id) {
       vars.photo = vars.photo.id;
     }
-    const result = await dispatchGraphQlRequest(query, vars, actions, dispatch, {graphqlRequest, history});
-    if (result) {
-      toastr.success('Successfully saved!');
-    }
+    return await dispatchGraphQlRequest(query, vars, actions, dispatch, {graphqlRequest, history});
   };
 }

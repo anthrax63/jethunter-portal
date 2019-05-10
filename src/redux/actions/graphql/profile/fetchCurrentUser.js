@@ -12,6 +12,11 @@ export default function fetchCurrentUser(variables) {
       description,
       company,
       jetmanId,
+      twitter,
+      facebook,
+      telegram,
+      whatsapp,
+      phoneNumber,
       photo {
         id,
         link

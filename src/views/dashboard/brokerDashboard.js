@@ -93,7 +93,7 @@ class BrokerDashboard extends Component {
                   <FormattedMessage {...messages.yourId} />
                 </div>
                 <div className="text-center">
-                  <a href="https://artur.carrd.co/">{`https://${jetmanId}.jetman.io`}</a>
+                  <a href={`/pages/${jetmanId}`} target="_blank">{`https://${jetmanId}.jetman.io`}</a>
                   <div className="pad2">
                     <br/>
                     <Button

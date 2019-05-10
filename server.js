@@ -11,12 +11,12 @@ app.use(proxy('/graphql', {
 }));
 
 app.use(proxy('/pages', {
-  target: 'https://jethunterdemo.herokuapp.com/pages', secure: false,
+  target: 'https://jethunterdemo.herokuapp.com/', secure: false,
   changeOrigin: true
 }));
 
 app.use(proxy('/templatedata', {
-  target: 'https://jethunterdemo.herokuapp.com/templatedata', secure: false,
+  target: 'https://jethunterdemo.herokuapp.com/', secure: false,
   changeOrigin: true
 }));
 

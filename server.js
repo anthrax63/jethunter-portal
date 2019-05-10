@@ -10,6 +10,15 @@ app.use(proxy('/graphql', {
   changeOrigin: true
 }));
 
+app.use(proxy('/pages', {
+  target: 'https://jethunterdemo.herokuapp.com/pages', secure: false,
+  changeOrigin: true
+}));
+
+app.use(proxy('/templatedata', {
+  target: 'https://jethunterdemo.herokuapp.com/templatedata', secure: false,
+  changeOrigin: true
+}));
 
 app.use(express.static(path.join(__dirname, 'build')));
 

@@ -6,7 +6,6 @@ import {
   Navbar,
   Nav,
   UncontrolledDropdown,
-  Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem
@@ -18,10 +17,21 @@ import {
   User,
   LogOut
 } from 'react-feather';
-import {injectIntl} from 'react-intl';
+import {defineMessages, FormattedMessage, injectIntl} from 'react-intl';
 
 import userImage from '../../../assets/img/avatar_mock.png';
 import ReactCountryFlag from 'react-country-flag';
+
+const messages = defineMessages({
+  myProfile: {
+    id: 'navbar.myProfile',
+    defaultMessage: 'My profile'
+  },
+  logout: {
+    id: 'navbar.logout',
+    defaultMessage: 'Logout'
+  }
+});
 
 const iconsMap = {
   en: 'us',
@@ -57,6 +67,7 @@ class ThemeNavbar extends Component {
   };
 
   render() {
+    const {photo} = this.props;
     return (
       <Navbar className="navbar navbar-expand-lg navbar-light bg-faded">
         <div className="container-fluid px-0">
@@ -93,7 +104,7 @@ class ThemeNavbar extends Component {
                 </UncontrolledDropdown>
                 <UncontrolledDropdown nav inNavbar className="pr-1">
                   <DropdownToggle nav>
-                    <img src={userImage} alt="logged-in-user" className="rounded-circle width-35"/>
+                    <img src={photo || userImage} alt="logged-in-user" className="rounded-circle width-35 height-35"/>
                   </DropdownToggle>
                   <DropdownMenu right>
                     <DropdownItem>
@@ -103,12 +114,12 @@ class ThemeNavbar extends Component {
 
                     <Link to="/profile" className="p-0">
                       <DropdownItem>
-                        <User size={16} className="mr-1"/> My Profile
+                        <User size={16} className="mr-1"/><FormattedMessage {...messages.myProfile}/>
                       </DropdownItem>
                     </Link>
                     <Link to="/signin" className="p-0">
                       <DropdownItem onClick={this.handleLogout}>
-                        <LogOut size={16} className="mr-1"/> Logout
+                        <LogOut size={16} className="mr-1"/> <FormattedMessage {...messages.logout}/>
                       </DropdownItem>
                     </Link>
                   </DropdownMenu>

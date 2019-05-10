@@ -74,30 +74,10 @@ class Sidebar extends Component {
                <PerfectScrollbar className="sidebar-content">
                  <SideMenuContent collapsedSidebar={this.state.collapsedSidebar} toggleSidebarMenu={this.props.toggleSidebarMenu} />
                </PerfectScrollbar>
-
-               {/* {this.props.img === '' ? ( */}
-               {templateConfig.sidebar.backgroundImage ? (
-                 (this.props.imgurl === '') ?
-                   <div
-                     className="sidebar-background"
-                     style={{backgroundImage: 'url(\'' + templateConfig.sidebar.backgroundImageURL + '\')'}}>
-                   </div>
-                   :
-                   <div
-                     className="sidebar-background"
-                     style={{backgroundImage: 'url(\'' + this.props.imgurl + '\')'}}>
-                   </div>
-               ) :
-                 (
-                   (this.props.imgurl === '') ?
-                     <div className="sidebar-background"></div>
-                     :
-                     <div
-                       className="sidebar-background"
-                       style={{backgroundImage: 'url(\'' + this.props.imgurl + '\')'}}>
-                     </div>
-                 )
-               }
+               <div
+                 className="sidebar-background"
+                 style={{backgroundImage: 'url(\'' + templateConfig.sidebar.backgroundImageURL + '\')'}}>
+               </div>
              </div>
            )}
          </FoldedContentConsumer>

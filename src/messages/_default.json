@@ -232,5 +232,45 @@
     "files": [
       "src/i10n/commonMessages.js"
     ]
+  },
+  {
+    "id": "navbar.logout",
+    "defaultMessage": "Logout",
+    "message": "",
+    "files": [
+      "src/layouts/components/navbar/navbar.js"
+    ]
+  },
+  {
+    "id": "navbar.myProfile",
+    "defaultMessage": "My profile",
+    "message": "",
+    "files": [
+      "src/layouts/components/navbar/navbar.js"
+    ]
+  },
+  {
+    "id": "brokerDashboard.goToProfile",
+    "defaultMessage": "Go to Profile",
+    "message": "",
+    "files": [
+      "src/views/dashboard/brokerDashboard.js"
+    ]
+  },
+  {
+    "id": "brokerDashboard.hi",
+    "defaultMessage": "Hi {firstName}!",
+    "message": "",
+    "files": [
+      "src/views/dashboard/brokerDashboard.js"
+    ]
+  },
+  {
+    "id": "brokerDashboard.youNeedToFillOut",
+    "defaultMessage": "You need to fill out your profile information before continue",
+    "message": "",
+    "files": [
+      "src/views/dashboard/brokerDashboard.js"
+    ]
   }
 ]

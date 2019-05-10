@@ -79,6 +79,7 @@ class MainLayout extends PureComponent {
                  logout={this.props.logout}
                  firstName={this.props.user.firstName}
                  lastName={this.props.user.lastName}
+                 photo={this.props.user.photo && this.props.user.photo.link}
                  setLocale={this.props.setLocale}
                />
                <main>{this.props.children}</main>

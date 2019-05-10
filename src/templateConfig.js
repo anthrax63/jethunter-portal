@@ -19,6 +19,7 @@ const templateConfig = {
     backgroundImage: true, // Options: true, false | Set true to show background image
     backgroundImageURL: sidebarBGImage // Change image from sidebarBGImage import
   },
+  backgroundImageURL: sidebarBGImage,
   buyNow: false, // Options: true, false - To show floating buy now button.
   graphQlEndpoint: '/graphql'
 };

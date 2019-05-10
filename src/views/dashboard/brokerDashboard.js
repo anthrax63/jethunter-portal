@@ -38,6 +38,18 @@ const messages = defineMessages({
   copied: {
     id: 'brokerDashboard.copied',
     defaultMessage: 'Copied to clipboard!'
+  },
+  hi: {
+    id: 'brokerDashboard.hi',
+    defaultMessage: 'Hi {firstName}!'
+  },
+  youNeedToFillOut: {
+    id: 'brokerDashboard.youNeedToFillOut',
+    defaultMessage: 'You need to fill out your profile information before continue'
+  },
+  goToProfile: {
+    id: 'brokerDashboard.goToProfile',
+    defaultMessage: 'Go to Profile'
   }
 });
 
@@ -56,10 +68,11 @@ class BrokerDashboard extends Component {
   renderNotFilled = () => {
     return (
       <div className="text-center">
-        <h1>Hi {this.props.firstName}!</h1>
-        <h1>You need to fill out your profile information before continue</h1>
-        <Button tag={Link} to="/profile" color="info" className="shadow-z-2 gradient-purple-bliss">Go to
-          Profile</Button>
+        <h1><FormattedMessage {...messages.hi} values={{firstName: this.props.firstName}} /></h1>
+        <h1><FormattedMessage {...messages.youNeedToFillOut} /></h1>
+        <Button tag={Link} to="/profile" color="info" className="shadow-z-2 gradient-purple-bliss">
+          <FormattedMessage {...messages.goToProfile} />
+        </Button>
       </div>
     );
   };
@@ -72,7 +85,7 @@ class BrokerDashboard extends Component {
           <Col sm="12" md="12">
             <Card>
               <CardBody className="text-center">
-                <CardTitle><FormattedMessage {...messages.congratulations} values={{firstName}} /></CardTitle>
+                <CardTitle><FormattedMessage {...messages.congratulations} values={{firstName}}/></CardTitle>
                 <CardText>
                   <FormattedMessage {...messages.youHaveCompleted} />
                 </CardText>

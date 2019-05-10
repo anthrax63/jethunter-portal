@@ -37,10 +37,10 @@ class Register extends Component {
 
   render() {
     return (
-      <div className="container">
-        <Row className="full-height-vh">
-          <Col xs="12" className="d-flex align-items-center justify-content-center">
-            <Card className="gradient-indigo-purple text-center width-400">
+      <div className="container full-height-vh">
+        <Row className="">
+          <Col xs="12" className="d-flex justify-content-center">
+            <Card className="text-center width-400" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
               <CardBody>
                 <h2 className="white py-4">Register</h2>
                 <Form className="pt-2" onSubmit={this.handleSubmit}>
@@ -107,7 +107,7 @@ class Register extends Component {
                   </FormGroup>
                 </Form>
               </CardBody>
-              <CardFooter>
+              <CardFooter style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
                 <div className="float-right">
                   <NavLink to="/signin" className="text-white">
                               Login

@@ -16,7 +16,8 @@ export function fetchCurrentUser() {
     me {
       login,
       firstName,
-      lastName
+      lastName,
+      photo { link }
     }
   }`;
   return async (dispatch, getState, {graphqlRequest, history}) => {

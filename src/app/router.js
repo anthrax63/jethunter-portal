@@ -58,6 +58,7 @@ class Router extends Component {
                 <LazyRegister {...matchprops} />
               </Suspense>
             )}
+            {...this.props}
           />
           <MainLayoutRoutes
             exact

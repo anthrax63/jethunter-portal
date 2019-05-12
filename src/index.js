@@ -12,8 +12,6 @@ import 'font-awesome/css/font-awesome.min.css';
 
 import './index.scss';
 import Spinner from './components/spinner/spinner';
-import {IntlProvider} from 'react-intl';
-
 
 const LazyApp = lazy(() => import('./containers/app'));
 

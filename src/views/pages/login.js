@@ -8,12 +8,13 @@ import {
   Form,
   FormGroup,
   Button,
-  Label,
   Card,
   CardBody,
   CardFooter
 } from 'reactstrap';
-
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faFacebook, faGoogle} from '@fortawesome/free-brands-svg-icons';
+import {toastr} from 'react-redux-toastr';
 
 class Login extends Component {
   state = {
@@ -42,11 +43,30 @@ class Login extends Component {
     this.props.login(form);
   };
 
+  handleGoogleClick = async () => {
+    const data = await this.props.signInWithGoogle();
+    if (data) {
+      await this.props.loginWithGoogle({accessToken: data.credential.accessToken});
+    } else {
+      toastr.error(this.props.error);
+    }
+  };
+
+  handleFacebookClick = async () => {
+    const data = await this.props.signInWithFacebook();
+    console.log('data', data);
+    if (data) {
+      await this.props.loginWithFacebook({accessToken: data.credential.accessToken});
+    } else {
+      toastr.error(this.props.error);
+    }
+  };
+
   render() {
     return (
       <div className="container full-height-vh">
         <Row className="">
-          <Col xs="12" className="d-flex justify-content-center" >
+          <Col xs="12" className="d-flex justify-content-center">
             <Card className="text-center width-400" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
               <CardBody>
                 <h2 className="white py-4">Login</h2>
@@ -80,17 +100,32 @@ class Login extends Component {
                   </FormGroup>
                   <FormGroup>
                     <Col md="12">
-                      <Button type="submit" color="danger" block className="btn-pink btn-raised">
+                      <Button type="submit" color="primary" block className="shadow-z-2">
                         Submit
                       </Button>
                     </Col>
                   </FormGroup>
                 </Form>
+                <div className="text-center">
+                  <p>
+                    or sign in using social networks
+                  </p>
+                  <Row>
+                    <Col md="4"/>
+                    <Col md="2">
+                      <Button className="gradient-blackberry" onClick={this.handleGoogleClick}><FontAwesomeIcon icon={faGoogle} size="lg"/></Button>
+                    </Col>
+                    <Col md="2">
+                      <Button className="gradient-pomegranate" onClick={this.handleFacebookClick}><FontAwesomeIcon icon={faFacebook} size="lg"/></Button>
+                    </Col>
+                    <Col md="4"/>
+                  </Row>
+                </div>
               </CardBody>
               <CardFooter style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
                 <div className="float-right">
                   <NavLink to="/register" className="text-white">
-                    Register Now
+                    Register
                   </NavLink>
                 </div>
               </CardFooter>

@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import * as actionCreators from '../redux/actions/graphql/login';
 import * as actionCreatorsGoogle from '../redux/actions/graphql/signInWithGoogle';
 import * as actionCreatorsFacebook from '../redux/actions/graphql/signInWithFacebook';
+import * as actionCreatorsTwitter from '../redux/actions/graphql/signInWithTwitter';
 import {bindActionCreators} from 'redux';
 import withFirebaseAuth from 'react-with-firebase-auth';
 import {firebaseAppAuth, providers} from '../firebase';
@@ -17,7 +18,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     ...bindActionCreators(actionCreators, dispatch),
     ...bindActionCreators(actionCreatorsGoogle, dispatch),
-    ...bindActionCreators(actionCreatorsFacebook, dispatch)
+    ...bindActionCreators(actionCreatorsFacebook, dispatch),
+    ...bindActionCreators(actionCreatorsTwitter, dispatch)
   };
 };
 

@@ -13,7 +13,7 @@ import {
   CardFooter
 } from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faFacebook, faGoogle} from '@fortawesome/free-brands-svg-icons';
+import {faFacebook, faGoogle, faTwitter} from '@fortawesome/free-brands-svg-icons';
 import {toastr} from 'react-redux-toastr';
 
 class Login extends Component {
@@ -37,7 +37,6 @@ class Login extends Component {
   };
 
   handleSubmit = (e) => {
-    console.log('handleSubmit', this.state);
     e.preventDefault();
     const form = this.state.form;
     this.props.login(form);
@@ -54,9 +53,18 @@ class Login extends Component {
 
   handleFacebookClick = async () => {
     const data = await this.props.signInWithFacebook();
-    console.log('data', data);
     if (data) {
       await this.props.loginWithFacebook({accessToken: data.credential.accessToken});
+    } else {
+      toastr.error(this.props.error);
+    }
+  };
+
+  handleTwitterClick = async () => {
+    const data = await this.props.signInWithTwitter();
+    console.log('data', data);
+    if (data) {
+      await this.props.loginWithTwitter({accessToken: data.credential.accessToken, secret: data.credential.secret});
     } else {
       toastr.error(this.props.error);
     }
@@ -111,14 +119,17 @@ class Login extends Component {
                     or sign in using social networks
                   </p>
                   <Row>
-                    <Col md="4"/>
+                    <Col md="3"/>
                     <Col md="2">
-                      <Button className="gradient-blackberry" onClick={this.handleGoogleClick}><FontAwesomeIcon icon={faGoogle} size="lg"/></Button>
+                      <Button className="gradient-strawberry" onClick={this.handleGoogleClick}><FontAwesomeIcon icon={faGoogle} size="lg"/></Button>
                     </Col>
                     <Col md="2">
-                      <Button className="gradient-pomegranate" onClick={this.handleFacebookClick}><FontAwesomeIcon icon={faFacebook} size="lg"/></Button>
+                      <Button className="gradient-indigo-blue" onClick={this.handleFacebookClick}><FontAwesomeIcon icon={faFacebook} size="lg"/></Button>
                     </Col>
-                    <Col md="4"/>
+                    <Col md="2">
+                      <Button className="gradient-blueberry" onClick={this.handleTwitterClick}><FontAwesomeIcon icon={faTwitter} size="lg"/></Button>
+                    </Col>
+                    <Col md="3"/>
                   </Row>
                 </div>
               </CardBody>

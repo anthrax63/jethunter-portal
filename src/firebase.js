@@ -1,4 +1,3 @@
-
 // Firebase App (the core Firebase SDK) is always required and must be listed first
 import * as firebase from 'firebase/app';
 
@@ -28,4 +27,14 @@ export const providers = {
   twitterProvider: new firebase.auth.TwitterAuthProvider()
 };
 
+const facebookSalesProvider = new firebase.auth.FacebookAuthProvider();
+facebookSalesProvider.addScope('email');
+facebookSalesProvider.addScope('manage_pages');
+facebookSalesProvider.addScope('pages_show_list');
+facebookSalesProvider.addScope('pages_messaging');
+
+
+export const salesProviders = {
+  facebookProvider: facebookSalesProvider
+};
 

@@ -7,6 +7,8 @@ import login from './graphql/login';
 import dashboard from './graphql/dashboard';
 import profile from './graphql/profile';
 import intl from './intl';
+import facebookSalesChannel from './graphql/salesChannels/facebook/facebookSalesChannel';
+
 
 import {reducer as toastrReducer} from 'react-redux-toastr';
 
@@ -15,6 +17,7 @@ const rootReducer = combineReducers({
   me,
   login,
   dashboard,
+  facebookSalesChannel,
   profile,
   todoApp: todoReducer,
   toastr: toastrReducer // <- Mounted at toastr.

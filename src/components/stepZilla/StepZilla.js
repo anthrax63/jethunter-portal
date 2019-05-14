@@ -304,7 +304,8 @@ export default class StepZilla extends Component {
     const cloneExtensions = {
       jumpToStep: (t) => {
         this.jumpToStep(t);
-      }
+      },
+      stepProps: this.props.stepProps
     };
 
     const componentPointer = this.props.steps[this.state.compState].component;
@@ -312,7 +313,7 @@ export default class StepZilla extends Component {
     // can only update refs if its a regular React component (not a pure component), so lets check that
     if (
       componentPointer instanceof Component || // unit test deteceted that instanceof Component can be in either of these locations so test both (not sure why this is the case)
-      (componentPointer.type && componentPointer.type.prototype instanceof Component)
+         (componentPointer.type && componentPointer.type.prototype instanceof Component)
     ) {
       cloneExtensions.ref = 'activeComponent';
     }
@@ -326,7 +327,7 @@ export default class StepZilla extends Component {
           this.handleKeyDown(evt);
         }}
       >
-        {this.props.showSteps ? <ol className="progtrckr">{this.renderSteps()}</ol> : <span/>}
+        {this.props.showSteps ? <ol className="progtrckr">{this.renderSteps()}</ol> : <span />}
 
         {compToRender}
         <div style={this.props.showNavigation ? {} : this.hidden} className="footer-buttons">

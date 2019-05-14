@@ -62,7 +62,6 @@ class Login extends Component {
 
   handleTwitterClick = async () => {
     const data = await this.props.signInWithTwitter();
-    console.log('data', data);
     if (data) {
       await this.props.loginWithTwitter({accessToken: data.credential.accessToken, secret: data.credential.secret});
     } else {

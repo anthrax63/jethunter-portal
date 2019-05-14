@@ -16,6 +16,9 @@ const LazyProfile = lazy(() => import('../containers/profile'));
 const LazyLogin = lazy(() => import('../containers/login'));
 const LazyRegister = lazy(() => import('../containers/register'));
 
+const salesChannels = {
+  LazyFacebook: lazy(() => import('../containers/facebookSalesChannelContainer'))
+};
 
 // Error Pages
 const LazyErrorPage = lazy(() => import('../views/pages/error'));
@@ -76,6 +79,16 @@ class Router extends Component {
             render={(matchprops) => (
               <Suspense fallback={<Spinner/>}>
                 <LazyProfile {...matchprops} />
+              </Suspense>
+            )}
+            {...this.props}
+          />
+          <MainLayoutRoutes
+            exact
+            path="/salesChannels/facebook"
+            render={(matchprops) => (
+              <Suspense fallback={<Spinner/>}>
+                <salesChannels.LazyFacebook {...matchprops} />
               </Suspense>
             )}
             {...this.props}

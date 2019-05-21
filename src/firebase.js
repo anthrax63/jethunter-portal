@@ -32,6 +32,10 @@ facebookSalesProvider.addScope('email');
 facebookSalesProvider.addScope('manage_pages');
 facebookSalesProvider.addScope('pages_show_list');
 facebookSalesProvider.addScope('pages_messaging');
+facebookSalesProvider.addScope('pages_manage_cta');
+facebookSalesProvider.addScope('pages_manage_instant_articles');
+facebookSalesProvider.addScope('pages_messaging_subscriptions');
+facebookSalesProvider.addScope('pages_messaging_phone_number');
 
 
 export const salesProviders = {

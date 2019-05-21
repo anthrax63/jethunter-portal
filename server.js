@@ -3,10 +3,11 @@ const path = require('path');
 const proxy = require('http-proxy-middleware');
 const app = express();
 
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
+const apiEndpoint = process.env.API_ENDPOINT || 'https://api.jethunter.net/graphql';
 
 app.use(proxy('/graphql', {
-  target: 'https://jethunterdemo.herokuapp.com/graphql', secure: false,
+  target: apiEndpoint, secure: false,
   changeOrigin: true
 }));
 
@@ -27,6 +28,6 @@ app.get('*', (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-  console.log('Server Started on Port ', PORT);
+app.listen(port, () => {
+  console.log('Server Started on Port ', port);
 });

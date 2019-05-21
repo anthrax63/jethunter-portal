@@ -7,7 +7,7 @@ const port = process.env.PORT || 5000;
 const apiEndpoint = process.env.API_ENDPOINT || 'https://api.jethunter.net/';
 
 app.use(proxy('/graphql', {
-  target: apiEndpoint, secure: false,
+  target: apiEndpoint + 'graphql', secure: false,
   changeOrigin: true
 }));
 

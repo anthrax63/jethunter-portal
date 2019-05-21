@@ -6,17 +6,17 @@ const app = express();
 const port = process.env.PORT || 5000;
 const apiEndpoint = process.env.API_ENDPOINT || 'https://api.jethunter.net/';
 
-app.use(proxy('/graphql', {
+app.use('/graphql', proxy('/graphql', {
   target: apiEndpoint + 'graphql', secure: false,
   changeOrigin: true
 }));
 
-app.use(proxy('/pages', {
+app.use('/pages', proxy('/pages', {
   target: apiEndpoint, secure: false,
   changeOrigin: true
 }));
 
-app.use(proxy('/templatedata', {
+app.use('/templatedata', proxy('/templatedata', {
   target: apiEndpoint, secure: false,
   changeOrigin: true
 }));

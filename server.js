@@ -4,7 +4,7 @@ const proxy = require('http-proxy-middleware');
 const app = express();
 
 const port = process.env.PORT || 5000;
-const apiEndpoint = process.env.API_ENDPOINT || 'https://api.jethunter.net/graphql';
+const apiEndpoint = process.env.API_ENDPOINT || 'https://api.jethunter.net/';
 
 app.use(proxy('/graphql', {
   target: apiEndpoint, secure: false,
@@ -12,12 +12,12 @@ app.use(proxy('/graphql', {
 }));
 
 app.use(proxy('/pages', {
-  target: 'https://jethunterdemo.herokuapp.com/', secure: false,
+  target: apiEndpoint, secure: false,
   changeOrigin: true
 }));
 
 app.use(proxy('/templatedata', {
-  target: 'https://jethunterdemo.herokuapp.com/', secure: false,
+  target: apiEndpoint, secure: false,
   changeOrigin: true
 }));
 

@@ -21,6 +21,7 @@ import {toastr} from 'react-redux-toastr';
 import copy from 'copy-to-clipboard';
 import {defineMessages, FormattedMessage, injectIntl} from 'react-intl';
 import commonMessages from '../../i10n/commonMessages';
+import urlParse from 'url-parse';
 
 const messages = defineMessages({
   congratulations: {
@@ -79,6 +80,18 @@ class BrokerDashboard extends Component {
 
   renderFilled = () => {
     const {firstName, lastName, jetmanId, company, description, photo: {link}} = this.props;
+    const domain = urlParse(window.location.href).hostname;
+    let pageDomain = 'jetman.page';
+    let pageProtocol = 'https';
+    let pagePort = '';
+    if (domain.indexOf('stage.') !== -1) {
+      pageDomain = 'stage.jetman.page';
+    } else if (domain === 'localhost') {
+      pageDomain = 'jetman.test';
+      pageProtocol = 'http';
+      pagePort = '8080';
+    }
+    const pageUrl = `${pageProtocol}://${jetmanId}.${pageDomain}${pagePort ? `:${pagePort}` : ''}`;
     return (
       <Fragment>
         <Row>
@@ -93,7 +106,7 @@ class BrokerDashboard extends Component {
                   <FormattedMessage {...messages.yourId} />
                 </div>
                 <div className="text-center">
-                  <a href={`/pages/${jetmanId}`} target="_blank">{`https://${jetmanId}.jetman.io`}</a>
+                  <a href={pageUrl} target="_blank">{pageUrl}</a>
                   <div className="pad2">
                     <br/>
                     <Button

@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 
 
-import {defineMessages, FormattedMessage, injectIntl} from 'react-intl';
+import {defineMessages, injectIntl} from 'react-intl';
 import Loader from '../../../components/loader';
 import ContentHeader from '../../../components/contentHead/contentHeader';
 import ContentSubHeader from '../../../components/contentHead/contentSubHeader';
@@ -15,7 +15,6 @@ import Select from 'react-select';
 
 import '../../../assets/scss/views/form/wizard.scss';
 
-import imgMock from '../../../assets/img/avatar_mock.png';
 import {toastr} from 'react-redux-toastr';
 
 
@@ -62,8 +61,6 @@ class EnableChannelStep1 extends Component {
 
 
 class PageSelectOption extends Component {
-
-
   render() {
     console.log('option.props', this.props);
     const {innerProps, innerRef, data} = this.props;
@@ -132,7 +129,6 @@ class EnableChannelStep2 extends Component {
 }
 
 class EnableChannelStep3 extends Component {
-
   handleClick = () => {
     this.props.stepProps.connect();
   };

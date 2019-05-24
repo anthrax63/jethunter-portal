@@ -19,7 +19,7 @@ import {
 } from 'react-feather';
 import {defineMessages, FormattedMessage, injectIntl} from 'react-intl';
 
-import userImage from '../../../assets/img/avatar_mock.png';
+import userImage from '../../../assets/img/avatar_mock.jpg';
 import ReactCountryFlag from 'react-country-flag';
 
 const messages = defineMessages({

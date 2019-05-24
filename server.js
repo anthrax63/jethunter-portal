@@ -6,8 +6,9 @@ const morgan = require('morgan');
 
 const port = process.env.PORT || 5000;
 const apiEndpoint = process.env.API_ENDPOINT || 'https://api.jethunter.net/';
+const compression = require('compression');
 
-
+app.use(compression());
 app.use(morgan('tiny'));
 
 app.use('/graphql', proxy({

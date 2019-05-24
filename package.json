@@ -12,6 +12,7 @@
     "chartist": "^0.11.0",
     "check-types": "^8.0.2",
     "classnames": "^2.2.6",
+    "compression": "^1.7.4",
     "copy-to-clipboard": "^3.1.0",
     "draft-js": "^0.10.5",
     "firebase": "^6.0.2",

@@ -10,7 +10,6 @@ import SideMenuContent from './sidemenu/sidemenu';
 import SidebarHeader from './sidebarHeader/sidebarHeader';
 import {FoldedContentConsumer} from '../../../utility/context/toggleContentContext';
 import templateConfig from '../../../templateConfig';
-import {sidebarImage, sidebarImageUrl, sidebarBgColor, sidebarCollapsed, sidebarSize} from '../../../apexLib/redux/actions/customizer/customizerActions';
 
 class Sidebar extends Component {
    state = {
@@ -95,11 +94,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  sidebarBgColor: (color) => dispatch(sidebarBgColor(color)),
-  sidebarImage: (img) => dispatch(sidebarImage(img)),
-  sidebarImageUrl: (imgurl) => dispatch(sidebarImageUrl(imgurl)),
-  sidebarSize: (size) => dispatch(sidebarSize(size)),
-  sidebarCollapsed: (collapsed) => dispatch(sidebarCollapsed(collapsed))
 });
 
 export default connect(

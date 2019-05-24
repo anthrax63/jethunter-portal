@@ -69,7 +69,7 @@ class BrokerDashboard extends Component {
   renderNotFilled = () => {
     return (
       <div className="text-center">
-        <h1><FormattedMessage {...messages.hi} values={{firstName: this.props.firstName}} /></h1>
+        <h1><FormattedMessage {...messages.hi} values={{firstName: this.props.firstName}}/></h1>
         <h1><FormattedMessage {...messages.youNeedToFillOut} /></h1>
         <Button tag={Link} to="/profile" color="info" className="shadow-z-2 gradient-purple-bliss">
           <FormattedMessage {...messages.goToProfile} />
@@ -106,7 +106,7 @@ class BrokerDashboard extends Component {
                   <FormattedMessage {...messages.yourId} />
                 </div>
                 <div className="text-center">
-                  <a href={pageUrl} target="_blank">{pageUrl}</a>
+                  <a href={pageUrl} rel="noreferrer" target="_blank">{pageUrl}</a>
                   <div className="pad2">
                     <br/>
                     <Button
